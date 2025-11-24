@@ -1,0 +1,14 @@
+
+<button (click)="displayAllInvestments()">Show All Investments</button>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; font-weight: bold;">
+        <div>Investment Name</div>
+        <div>Amount</div>
+        <div>Date</div>
+        <div>Type</div>
+    </div>
+    <div *ngFor="let investment of allInvestmentsList()" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+        <div>{{ investment.name }}</div>
+        <div>{{ investment.amount }}</div>
+        <div>{{ investment.purchaseDate }}</div>
+        <div>{{ investment.type }}</div>
+    </div>
