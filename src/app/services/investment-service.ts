@@ -27,4 +27,16 @@ export class InvestmentService {
   getInvestmentById(id: number): Observable<Investment> {
     return this.http.get<Investment>(`${this.apiURl}/${id}`);
   }
+
+  addInvestment(obj: Investment): Observable<Investment> {
+    return this.http.post<Investment>(`${this.apiURl}`, obj);
+  }
+
+  updateInvestment(obj: Investment): Observable<Investment> {
+    return this.http.put<Investment>(`${this.apiURl}/${obj.id}`, obj);
+  }
+
+  deleteInvestment(id: number): Observable<Investment> {
+    return this.http.delete<Investment>(`${this.apiURl}/${id}`);
+  }
 }

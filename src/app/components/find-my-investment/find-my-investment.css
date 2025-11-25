@@ -60,7 +60,7 @@
   
   /* Input (glass) */
   .input-glass {
-    width: 100%;
+    
     padding: 0.6rem 0.8rem;
     border-radius: var(--radius);
     border: 1px solid var(--glass-border);
@@ -193,3 +193,9 @@
     }
   }
   
+  /* Hide spinner (up/down arrows) in input[type="number"] */
+input[type="number"] {
+    -moz-appearance: textfield !important; /* For Firefox */
+    -webkit-appearance: none !important;  /* For Chrome/Safari */
+    appearance: none !important;          /* Standard syntax */
+}
