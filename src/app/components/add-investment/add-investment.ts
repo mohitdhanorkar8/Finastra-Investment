@@ -13,6 +13,7 @@ export class AddInvestment {
 investment: Investment = { id: 0, name: '', type: 'Equity', amount: 0, purchaseDate: '', currentValue: 0 };
 successMessage: string = '';
 errorMessage: string = '';
+id: any;
 
 constructor(private investmentService: InvestmentService) {}
 generateUniqueId(): number {

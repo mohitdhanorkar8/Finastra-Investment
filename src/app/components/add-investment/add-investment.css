@@ -1,0 +1,104 @@
+.add-inv-center h2{
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--fg);
+  }
+  
+  .add-inv-center{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative; 
+  }
+  
+    .add-inv-center h2{
+    background: var(--glass-bg);
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+    margin: 0 0 -1rem 0; 
+    z-index: 5;
+    position: relative;
+    transform: translateY(0.5rem);
+    font-size: 1.15rem;
+  }
+  
+  .add-inv-form {
+    padding-top: 1.5rem;
+    box-sizing: border-box;
+  }
+  
+  .add-inv-center {
+    min-height: calc(100vh - 140px);
+    padding: 1.5rem 1rem;
+    justify-content: flex-start; 
+  }
+  
+  .add-inv-form {
+    width: 100%;
+    max-width: 720px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(31,41,55,0.08);
+    padding: 1.5rem 1.25rem 1.25rem;
+    display: grid;
+    gap: 0.85rem;
+    position: relative;
+    margin-top: 3rem; 
+    box-sizing: border-box;
+  }
+  
+  .add-inv-center h2 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.35rem 1rem;
+    background: var(--glass-bg);
+    border-radius: 999px;
+    z-index: 6;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  }
+  
+  /* form groups aligned and full width */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    width: 100%;
+  }
+  
+  /* inputs full width and visually consistent */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.92);
+    color: var(--fg);
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  /* center the submit button and keep fixed width on desktop */
+  .btn-glass {
+    justify-self: center;
+    width: 227px;
+    border-radius: 8px;
+    height: 40px;
+  }
+  
+  /* responsive tweaks */
+  @media (max-width: 720px) {
+    .add-inv-form { padding: 1.25rem; max-width: 560px; }
+    .add-inv-center h2 { top: -16px; font-size: 1.05rem; padding: 0.3rem 0.8rem; }
+    .btn-glass { width: 100%; }
+  }

@@ -2,6 +2,14 @@
 <div class="add-inv-center">
     <h2>Add New Investment</h2>
     <form (ngSubmit)="addInvestment()" #investmentForm="ngForm" class="add-inv-form">
+       
+        <div class="form-group">
+            <label for="name">Investment ID:</label>
+            <input type="text" id="id" required [(ngModel)]="investment.id" name="id" #id="ngModel">        
+            <div [hidden]="id.valid || name.pristine" class="error">
+                Investment ID is required
+            </div>
+        </div>        
         <div class="form-group">
             <label for="name">Investment Name:</label>
             <input type="text" id="name" required [(ngModel)]="investment.name" name="name" #name="ngModel">        

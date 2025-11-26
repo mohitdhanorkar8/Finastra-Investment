@@ -21,4 +21,5 @@ export const routes: Routes = [
         path:'deleteInvestment',
         component: DeleteInvestment
     }
+
 ];

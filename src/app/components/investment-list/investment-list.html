@@ -1,28 +1,25 @@
-
 <div class="inv-center">
-    <button class="btn-glass" (click)="displayAllInvestments()">Show All Investments</button>
-  
-    <section class="inv-table">
-      <!-- Header -->
-      <div class="inv-row inv-header" role="row">
-        <div class="inv-cell" role="columnheader">Investment Name</div>
-        <div class="inv-cell" role="columnheader">Amount Invested</div>
-        <div class="inv-cell" role="columnheader">Purchase Date</div>
-        <div class="inv-cell" role="columnheader">Investment Type</div>
-      </div>
-  
-      <!-- Body -->
-      <div
-        class="inv-row"
-        role="row"
-        *ngFor="let investment of allInvestmentsList(); let i = index"
-        [class.alt]="i % 2 === 1"
-      >
-        <div class="inv-cell" role="cell">{{ investment.name }}</div>
-        <div class="inv-cell" role="cell">{{ investment.amount | currency:'INR':'symbol':'1.0-0' }}</div>
-        <div class="inv-cell" role="cell">{{ investment.purchaseDate | date:'MMM d, y' }}</div>
-        <div class="inv-cell" role="cell">{{ investment.type }}</div>
-      </div>
-    </section>
-  </div>
-  
+  <button class="btn-glass" (click)="displayAllInvestments()">Show All Investments</button>
+
+  <section class="inv-table">
+    <!-- Header -->
+    <div class="inv-row inv-header" role="row">
+      <div class="inv-cell" role="columnheader">Investment ID</div>
+      <div class="inv-cell" role="columnheader">Investment Name</div>
+      <div class="inv-cell" role="columnheader">Amount Invested</div>
+      <div class="inv-cell" role="columnheader">Purchase Date</div>
+      <div class="inv-cell" role="columnheader">Investment Type</div>
+    </div>
+
+    <!-- Body -->
+    <div class="inv-row" role="row" *ngFor="let investment of allInvestmentsList(); let i = index"
+      [class.alt]="i % 2 === 1">
+      
+      <div class="inv-cell inv-col-id" role="cell">{{ investment.id }}</div>
+      <div class="inv-cell" role="cell">{{ investment.name }}</div>
+      <div class="inv-cell" role="cell">{{ investment.amount | currency:'INR':'symbol':'1.0-0' }}</div>
+      <div class="inv-cell" role="cell">{{ investment.purchaseDate | date:'MMM d, y' }}</div>
+      <div class="inv-cell" role="cell">{{ investment.type }}</div>
+    </div>
+  </section>
+</div>
