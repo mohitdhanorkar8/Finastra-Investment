@@ -9,6 +9,7 @@
   --radius: 12px;
 }
 
+/* Glass Button */
 .btn-glass {
   padding: 10px 22px;
   font-size: 16px;
@@ -16,11 +17,9 @@
   border-radius: 12px;
   border: none;
   cursor: pointer;
-
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   color: #1c00ef;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
@@ -37,8 +36,7 @@
   transform: scale(0.97);
 }
 
-
-/* Centering wrapper (glass app style) */
+/* Page Center Wrapper */
 .inv-center {
   display: flex;
   flex-direction: column;
@@ -50,7 +48,7 @@
   color: var(--fg);
 }
 
-/* Glass card for the table */
+/* Glass Table Container */
 .inv-table {
   width: 100%;
   max-width: 960px;
@@ -65,38 +63,39 @@
   box-sizing: border-box;
 }
 
-/* Row layout using grid for consistent columns */
+/* Grid Structure for Rows */
 .inv-row {
   display: grid;
-  grid-template-columns: 120px 1fr 160px 160px 140px; /* ID, name, amount, date, type */
+  grid-template-columns: 150px 1fr 160px 160px 140px; /* Increased ID width */
   gap: 0;
   align-items: center;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1rem; /* Same spacing for header & rows */
   transition: background 120ms ease;
 }
 
-/* Header styling - clearly visible */
+/* Header Styling */
 .inv-header {
   background: linear-gradient(90deg, rgba(59,130,246,0.06), rgba(34,211,238,0.04));
   color: var(--fg);
   font-weight: 800;
   letter-spacing: 0.3px;
   border-bottom: 1px solid rgba(0,0,0,0.04);
+  padding: 0.7rem 1rem !important; /* Match row spacing */
 }
 
-/* Header cells bold and readable */
+/* Header Cells */
 .inv-header .inv-cell {
   color: var(--fg);
   font-weight: 800;
   text-transform: none;
 }
 
-/* Body row alternate background for readability */
+/* Alternate Row Effect */
 .inv-row.alt {
   background: rgba(0,0,0,0.02);
 }
 
-/* Cell styling */
+/* Cell Base Style */
 .inv-cell {
   padding: 0 0.5rem;
   color: var(--fg-dim);
@@ -106,38 +105,39 @@
   white-space: nowrap;
 }
 
-/* ID column styling */
-.inv-col-id {
+/* Center the ID Column — header + body */
+.inv-col-id,
+.inv-header .inv-col-id {
+  text-align: center;
+  justify-content: center;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-  color: var(--fg);
   font-weight: 800;
+  color: var(--fg);
 }
 
-/* Hover effect for data rows */
+/* Hover Effect */
 .inv-row:not(.inv-header):hover {
   background: rgba(59,130,246,0.03);
 }
 
-/* Button spacing */
+/* Button Spacing */
 .inv-center > .btn-glass {
   margin-bottom: 0.75rem;
   align-self: center;
 }
 
-/* Responsive: reduce columns widths */
+/* Responsive Adjustments */
 @media (max-width: 880px) {
   .inv-row {
-    grid-template-columns: 90px 1fr 120px 120px 110px;
+    grid-template-columns: 110px 1fr 120px 120px 110px;
     padding: 0.6rem 0.8rem;
   }
   .inv-table { max-width: 100%; margin: 0.75rem auto; }
 }
 
-/* Small screens: stack cells but keep header visible and readable */
 @media (max-width: 640px) {
   .inv-table { border-radius: 12px; }
 
-  /* Stack each data row vertically */
   .inv-row {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
@@ -145,16 +145,15 @@
     padding: 0.6rem;
   }
 
-  /* Keep header as a single row with clear column labels */
   .inv-header {
     display: grid;
-    grid-template-columns: 120px 1fr 120px 120px 110px;
+    grid-template-columns: 150px 1fr 120px 120px 110px;
     padding: 0.6rem 0.8rem;
     gap: 0.4rem;
   }
+
   .inv-header .inv-cell { white-space: nowrap; }
 
-  /* For body rows show values full width */
   .inv-row:not(.inv-header) .inv-cell {
     white-space: normal;
     padding-left: 0.6rem;

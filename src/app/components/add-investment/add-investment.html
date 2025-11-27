@@ -1,50 +1,55 @@
-<!-- Template-driven forms in Angular already use the ngModel directive for two-way data binding -->
 <div class="add-inv-center">
     <h2>Add New Investment</h2>
     <form (ngSubmit)="addInvestment()" #investmentForm="ngForm" class="add-inv-form">
-       
-        <div class="form-group">
-            <label for="name">Investment ID:</label>
-            <input type="text" id="id" required [(ngModel)]="investment.id" name="id" #id="ngModel">        
-            <div [hidden]="id.valid || name.pristine" class="error">
-                Investment ID is required
-            </div>
-        </div>        
-        <div class="form-group">
-            <label for="name">Investment Name:</label>
-            <input type="text" id="name" required [(ngModel)]="investment.name" name="name" #name="ngModel">        
-            <div [hidden]="name.valid || name.pristine" class="error">
-                Investment Name is required
-            </div>
+      <!-- ID field (editable) -->
+      <div class="form-group">
+        <label for="id">Investment ID:</label>
+        <input class="input-glass" type="text" id="id" required [(ngModel)]="investment.id" name="id" #id="ngModel">
+        <div [hidden]="id.valid || id.pristine" class="error">
+          Investment ID is required
         </div>
-        <div class="form-group">
-            <label for="amount">Amount Invested:</label>
-            <input type="number" id="amount" required [(ngModel)]="investment.amount" name="amount" #amount="ngModel">        
-            <div [hidden]="amount.valid || amount.pristine" class="error">
-                Amount Invested is required
-            </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Investment Name:</label>
+        <input class="input-glass" type="text" id="name" required [(ngModel)]="investment.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="error">
+          Investment Name is required
         </div>
-        <div class="form-group">
-            <label for="purchaseDate">Purchase Date:</label>
-            <input type="date" id="purchaseDate" required [(ngModel)]="investment.purchaseDate" name="purchaseDate" #purchaseDate="ngModel">        
-            <div [hidden]="purchaseDate.valid || purchaseDate.pristine" class="error">
-                Purchase Date is required
-            </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="amount">Amount Invested:</label>
+        <input class="input-glass" type="number" id="amount" required [(ngModel)]="investment.amount" name="amount" #amount="ngModel">
+        <div [hidden]="amount.valid || amount.pristine" class="error">
+          Amount Invested is required
         </div>
-        <div class="form-group">
-            <label for="type">Investment Type:</label>
-            <input type="text" id="type" required [(ngModel)]="investment.type" name="type" #type="ngModel">        
-            <div [hidden]="type.valid || type.pristine" class="error">
-                Investment Type is required
-            </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="purchaseDate">Purchase Date:</label>
+        <input class="input-glass" type="date" id="purchaseDate" required [(ngModel)]="investment.purchaseDate" name="purchaseDate" #purchaseDate="ngModel">
+        <div [hidden]="purchaseDate.valid || purchaseDate.pristine" class="error">
+          Purchase Date is required
         </div>
-        <div class="form-group">
-            <label for="currentValue">Current Value:</label>
-            <input type="number" id="currentValue" required [(ngModel)]="investment.currentValue" name="currentValue" #currentValue="ngModel">        
-            <div [hidden]="currentValue.valid || currentValue.pristine" class="error">
-                Current Value is required
-            </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="type">Investment Type:</label>
+        <input class="input-glass" type="text" id="type" required [(ngModel)]="investment.type" name="type" #type="ngModel">
+        <div [hidden]="type.valid || type.pristine" class="error">
+          Investment Type is required
         </div>
-        <button type="submit" [disabled]="!investmentForm.form.valid" class="btn-glass">Add Investment</button>
+      </div>
+  
+      <div class="form-group">
+        <label for="currentValue">Current Value:</label>
+        <input class="input-glass" type="number" id="currentValue" required [(ngModel)]="investment.currentValue" name="currentValue" #currentValue="ngModel">
+        <div [hidden]="currentValue.valid || currentValue.pristine" class="error">
+          Current Value is required
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="!investmentForm.form.valid" class="btn-glass">Add Investment</button>
     </form>
-</div>
+  </div>
