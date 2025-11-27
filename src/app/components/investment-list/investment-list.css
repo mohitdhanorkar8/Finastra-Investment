@@ -1,163 +1,83 @@
+
+/* ===== Theme tokens (bright glass) ===== */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg: rgba(255, 255, 255, 0.68);
   --glass-border: rgba(0, 0, 0, 0.08);
   --fg: #0f172a;
-  --fg-dim: #475569;
+  --fg-dim: #334155;
   --accent: #3b82f6;
   --accent-2: #22d3ee;
   --hover-bg: rgba(0, 0, 0, 0.06);
   --radius: 12px;
 }
 
-/* Glass Button */
-.btn-glass {
-  padding: 10px 22px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #1c00ef;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
-.btn-glass:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  transform: translateY(-2px);
-}
-
-.btn-glass:active {
-  transform: scale(0.97);
-}
-
-/* Page Center Wrapper */
+/* ===== Centering wrapper ===== */
 .inv-center {
-  display: flex;
-  flex-direction: column;
+  /* Center the whole block horizontally */
+  max-width: 900px;        /* adjust as needed */
+  margin: 2rem auto;       /* auto centers, top/bottom spacing */
+  padding: 0 1rem;         /* small side padding for narrow screens */
+  text-align: center;      /* center the button and any inline headings */
+}
+
+/* ===== Button (glass) ===== */
+.btn-glass {
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 1.5rem 1rem;
-  min-height: calc(100vh - 140px);
-  box-sizing: border-box;
-  color: var(--fg);
-}
-
-/* Glass Table Container */
-.inv-table {
-  width: 100%;
-  max-width: 960px;
-  margin: 1rem auto;
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px) saturate(140%);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(31, 41, 55, 0.12);
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-/* Grid Structure for Rows */
-.inv-row {
-  display: grid;
-  grid-template-columns: 150px 1fr 160px 160px 140px; /* Increased ID width */
-  gap: 0;
-  align-items: center;
-  padding: 0.7rem 1rem; /* Same spacing for header & rows */
-  transition: background 120ms ease;
-}
-
-/* Header Styling */
-.inv-header {
-  background: linear-gradient(90deg, rgba(59,130,246,0.06), rgba(34,211,238,0.04));
-  color: var(--fg);
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
-  padding: 0.7rem 1rem !important; /* Match row spacing */
-}
-
-/* Header Cells */
-.inv-header .inv-cell {
-  color: var(--fg);
-  font-weight: 800;
-  text-transform: none;
-}
-
-/* Alternate Row Effect */
-.inv-row.alt {
-  background: rgba(0,0,0,0.02);
-}
-
-/* Cell Base Style */
-.inv-cell {
-  padding: 0 0.5rem;
-  color: var(--fg-dim);
-  font-weight: 700;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Center the ID Column — header + body */
-.inv-col-id,
-.inv-header .inv-col-id {
-  text-align: center;
   justify-content: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--fg);
+  font-weight: 700;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
+  transition: transform 160ms ease, box-shadow 180ms ease, background-color 160ms ease;
+  cursor: pointer;
+  margin-bottom: 1rem;   /* space under button */
+}
+.btn-glass:hover {
+  background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(34,211,238,0.12));
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(31,41,55,0.12);
+}
+
+/* ===== Table section ===== */
+.inv-table {
+  display: grid;
+  gap: 8px;
+  /* Center the table itself (optional if using .inv-center) */
+  justify-items: center;     /* center each row block horizontally */
+}
+
+/* Each row: 4-column grid on desktop, centered text */
+.inv-row {
+  width: 100%;
+  max-width: 900px;          /* matches container width for neat edges */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  color: var(--fg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px) saturate(130%);
+  -webkit-backdrop-filter: blur(8px) saturate(130%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
+  transition: transform 160ms ease, box-shadow 180ms ease, background-color 160ms ease;
+  text-align: center;        /* center align cell content */
+}
+
+/* Header row: sticky and high-contrast */
+.inv-header {
+  position: sticky;
+  top: 70px; /* adjust based on your navbar height */
+  z-index: 2;
   font-weight: 800;
   color: var(--fg);
-}
-
-/* Hover Effect */
-.inv-row:not(.inv-header):hover {
-  background: rgba(59,130,246,0.03);
-}
-
-/* Button Spacing */
-.inv-center > .btn-glass {
-  margin-bottom: 0.75rem;
-  align-self: center;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 880px) {
-  .inv-row {
-    grid-template-columns: 110px 1fr 120px 120px 110px;
-    padding: 0.6rem 0.8rem;
-  }
-  .inv-table { max-width: 100%; margin: 0.75rem auto; }
-}
-
-@media (max-width: 640px) {
-  .inv-table { border-radius: 12px; }
-
-  .inv-row {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 0.35rem;
-    padding: 0.6rem;
-  }
-
-  .inv-header {
-    display: grid;
-    grid-template-columns: 150px 1fr 120px 120px 110px;
-    padding: 0.6rem 0.8rem;
-    gap: 0.4rem;
-  }
-
-  .inv-header .inv-cell { white-space: nowrap; }
-
-  .inv-row:not(.inv-header) .inv-cell {
-    white-space: normal;
-    padding-left: 0.6rem;
-    font-weight: 700;
-    color: var(--fg-dim);
-  }
-}
+}  

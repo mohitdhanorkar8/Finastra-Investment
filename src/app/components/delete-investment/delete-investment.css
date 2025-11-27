@@ -1,0 +1,113 @@
+/* ===== Card Container ===== */
+.card {
+    max-width: 650px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 28px rgba(31, 41, 55, 0.12);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+  
+  /* .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 32px rgba(31, 41, 55, 0.15);
+  }
+   */
+  /* ===== Card Header ===== */
+  .card-header {
+    background: linear-gradient(90deg, rgba(59,130,246,0.1), rgba(34,211,238,0.08));
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+  }
+  
+  /* ===== Card Body ===== */
+  .card-body {
+    padding: 1.25rem 1.5rem;
+    color: #334155;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.12);
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.7);
+    transition: border-color 0.15s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+  }
+  
+  /* ===== Details Text ===== */
+  .card-body p {
+    font-size: 0.95rem;
+    margin: 0.35rem 0;
+    line-height: 1.4;
+    color: #1e293b;
+  }
+  
+  .card-body strong {
+    color: #0f172a;
+  }
+  
+  /* ===== Buttons ===== */
+  .btn-primary {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+  
+  .btn-danger {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+  
+  /* ===== Footer ===== */
+  .card-footer {
+    padding: 0.85rem 1.25rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+    background: rgba(255,255,255,0.4);
+  }
+
+  /* Center both buttons in one row */
+.action-row {
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 1rem;                 
+    margin: 1.2rem 0;
+  }
+  
+  .action-row .btn {
+    padding: 0.55rem 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+    min-width: 140px;  
+    text-align: center;
+  }
+  
+  

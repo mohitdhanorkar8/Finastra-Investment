@@ -7,7 +7,6 @@
             <label for="investmentId">Search Investment by ID:</label>
             <input type="text" id="investmentId" class="form-control" [(ngModel)]="investmentId" placeholder="Enter Investment ID">
         </div>
-        <button class="btn btn-primary mt-2" (click)="fetchInvestmentById(investmentId)">Fetch Investment</button>
         <ng-container *ngIf="investment; else noInvestment">
             <p><strong>Investment ID:</strong> {{ investment()?.id }}</p>
             <p><strong>Investment Name:</strong> {{ investment()?.name }}</p>
@@ -19,7 +18,14 @@
             <p>No investment details available.</p>
         </ng-template>
     </div>
-    <div class="card-footer">
-        <button class="btn btn-danger" (click)="deleteInvestmentById(investmentId)" [disabled]="!investmentId">Delete Investment</button>
-    </div>
+    <div class="action-row">
+        <button class="btn btn-primary" (click)="fetchInvestmentById(investmentId)">
+          Fetch Investment
+        </button>
+      
+        <button class="btn btn-danger" (click)="deleteInvestmentById(investmentId)" [disabled]="!investmentId">
+          Delete Investment
+        </button>
+      </div>
+      
 </div>
